@@ -73,7 +73,7 @@ Route::get('/rank', function() {
 Route::get('/board', function() {
     $isLoggedIn = null;
 
-    $posts = DB::select("SELECT * FROM posts");
+    $posts = DB::select("SELECT * FROM posts ORDER BY id DESC");
 
     if(Auth::check()) {
         $user = Auth::user();
