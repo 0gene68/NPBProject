@@ -51,18 +51,18 @@
       <div id="post-container">
         <select name="team" id="select">
           <option selected>팀을 선택하세요</option>
-          <option name="한신 타이거즈">한신 타이거즈</option>
-          <option name="오릭스 버팔로즈">오릭스 버팔로즈</option>
-          <option name="히로시마 도요 카프">히로시마 도요 카프</option>
-          <option name="치바 롯데 마린즈">치바 롯데 마린즈</option>
-          <option name="요코하마 DeNA 베이스타즈">요코하마 DeNA 베이스타즈</option>
-          <option name="후쿠오카 소프트뱅크 호크스">후쿠오카 소프트뱅크 호크스</option>
-          <option name="요미우리 자이언츠">요미우리 자이언츠</option>
-          <option name="도호쿠 라쿠텐 골든이글스">도호쿠 라쿠텐 골든이글스</option>
-          <option name="도쿄 야쿠르트 스왈로즈">도쿄 야쿠르트 스왈로즈</option>
-          <option name="사이타마 세이부 라이온즈">사이타마 세이부 라이온즈</option>
-          <option name="주니치 드래곤즈">주니치 드래곤즈</option>
-          <option name="홋카이도 닛폰햄 파이터즈">홋카이도 닛폰햄 파이터즈</option>
+          <option name="한신">한신 타이거즈</option>
+          <option name="오릭스">오릭스 버팔로즈</option>
+          <option name="히로시마">히로시마 도요 카프</option>
+          <option name="롯데">치바 롯데 마린즈</option>
+          <option name="DeNA">요코하마 DeNA 베이스타즈</option>
+          <option name="소프트뱅크">후쿠오카 소프트뱅크 호크스</option>
+          <option name="요미우리">요미우리 자이언츠</option>
+          <option name="라쿠텐">도호쿠 라쿠텐 골든이글스</option>
+          <option name="야쿠르트">도쿄 야쿠르트 스왈로즈</option>
+          <option name="세이부">사이타마 세이부 라이온즈</option>
+          <option name="주니치">주니치 드래곤즈</option>
+          <option name="닛폰햄">홋카이도 닛폰햄 파이터즈</option>
         </select>
         <div id="post_title">
           <span class="number"></span>
