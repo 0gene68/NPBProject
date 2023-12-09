@@ -1,0 +1,106 @@
+#titles {
+    display: flex;
+    margin-top: 100px;
+    height: 100px;
+}
+
+.title {
+    width: 50%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+}
+
+#centralTitle {
+    background-color: rgb(51, 136, 69);
+    left: 0;
+}
+
+#pacificTitle {
+    background-color: skyblue;
+    right: 0;
+}
+
+#centralLogo {
+    width: 80px;
+    margin-top: 10px;
+}
+
+#pacificLogo {
+    width: 160px;
+    margin-top: 10px;
+    position: absolute;
+    left: 150px;
+}
+
+.title > span {
+    margin-left: 30px;
+    font-size: 2em;
+    position: relative;
+}
+
+#centralTitle > span {
+    bottom: 20%;
+}
+
+#pacificTitle > span {
+    bottom: -30%;
+}
+
+/*----------------------------------*/
+#container {
+    display: flex;
+}
+
+#central-container > .wrapper {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    left: 150px;
+}
+
+#pacific-container {
+    margin-left: 80px;
+}
+
+#pacific-container > .wrapper {
+    width: 600px;
+    height: 300px;
+    position: relative;
+    left: 150px;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-left: 40px;
+    top: 50px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.wrapper img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.wrapper > div:nth-child(2) {
+    margin-left: 30px;
+    padding-top: 30px;
+}
+
+.wrapper a {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.wrapper a:hover {
+    opacity: 0.5;
+}
