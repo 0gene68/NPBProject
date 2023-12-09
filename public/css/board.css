@@ -46,7 +46,7 @@
 }
 
 .title {
-    width: 360px;
+    width: 340px;
 }
 
 .writer {
@@ -54,10 +54,10 @@
 }
 
 .created_at {
-    width: 100px;
+    width: 120px;
 }
 
-#post-container div:nth-child(5) {
+#post-container div:last-child {
     border-bottom: 1px solid black;
 }
 
