@@ -15,6 +15,7 @@
 
 #select {
     margin-bottom: 20px;
+    border: none;
 }
 
 .post {
@@ -37,12 +38,8 @@
     text-align: center;
 }
 
-.number {
-    width: 50px;
-}
-
 .team {
-    width: 170px;
+    width: 120px;
 }
 
 .title {
@@ -50,18 +47,98 @@
 }
 
 .writer {
-    width: 100px;
+    width: 90px;
 }
 
 .created_at {
-    width: 120px;
+    width: 170px;
 }
 
 #post-container div:last-child {
     border-bottom: 1px solid black;
 }
 
+#show_post {
+    background-color: white;
+    border: none;
+    opacity: 1;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#show_post:hover {
+    opacity: 0.5;
+}
+
 #create_post_button {
+    width: 60px;
+    height: 30px;
     position: absolute;
     right: 0;
+}
+
+#modal-background {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    background: white;
+    width: 800px;
+    height: 550px;
+    padding: 5px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content {
+    height: 510px;
+    padding: 40px;
+}
+
+.post_info {
+    display: flex;
+}
+
+#title {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#created_at {
+    position: absolute;
+    right: 50px;
+    line-height: 3.3;
+}
+
+#writer {
+    position: absolute;
+    right: 50px;
+}
+
+#content {
+    height: 300px;
+}
+
+.post-info button {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    /* background-color: white;
+    border: none; */
+}
+
+#post-modify {
+    right: 120px;
+}
+
+#post-delete {
+    right: 50px;
 }
