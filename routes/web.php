@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,6 +67,40 @@ Route::get('/rank', function() {
     }
 });
 
+Route::get('/board', function() {
+    $isLoggedIn = null;
+    if(Auth::check()) {
+        $isLoggedIn = "true";
+        return view('logged_in.posts_logged_in', ['isLoggedIn'=>$isLoggedIn]);
+    } else {
+        $isLoggedIn = "false";
+        return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn]);
+    }
+
+    return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn]);
+});
+
+Route::get('/create_post', function() {
+    return view('logged_in.post_logged_in');
+});
+
+Route::post('/post', function(Request $request) {
+    $user = Auth::user();
+    
+    $title = $request->input('title');
+    $team = $request->input('team');
+    $content = $request->input('content');
+
+    $post = new Post();
+    $post->title = $title;
+    $post->user_name = $user->name;
+    $post->team = $team;
+    $post->content = $content;
+    $post->save();
+
+    return redirect('/board')->with('success', '포스트가 등록되었습니다.');;
+});
+
 
 Route::get('/{team_id}', function(string $team_id) {
     $selectedTeam = Team::where('team_id', $team_id)->first();
@@ -83,7 +118,7 @@ Route::get('/{team_id}', function(string $team_id) {
     } else {
         return view('non_logged_in.team_non_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears]);
     }
-});
+})->where('team_id', 'Tigers|Buffaloes|Carp|Marines|Baystars|Hawks|Giants|Eagles|Swallows|Lions|Dragons|Fighters');
 
 
 Route::resource('comments', CommentsController::class);
