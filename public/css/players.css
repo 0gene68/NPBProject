@@ -1,0 +1,98 @@
+#toggle-title {
+    margin-left: 310px;
+    position: relative;
+}
+
+#toggle-container {
+    margin: 0 310px 0 310px;
+    position: relative;
+}
+
+.toggle-button {
+    cursor: pointer;
+    display: block;
+}
+
+.toggle-button::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.toggle-button.active::before {
+    transform: rotate(135deg);
+}
+
+.toggle-content {
+    display: none;
+}
+
+.toggle-content.active {
+    width: 800px;
+    margin: 0 50px 0 50px;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.box {
+    text-align: center;
+    width: 200px;
+    height: 220px;
+    cursor: pointer;
+}
+
+.player-image {
+    width: 100px;
+    height: 150px;
+    margin: 10px 0 0 10px;
+    border: 5px solid gray;
+}
+
+.box > div {
+    margin-top: 10px;
+}
+
+#modal-background {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    background: white;
+    width: 800px;
+    height: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content {
+    padding: 50px;
+    display: flex;
+}
+
+.modal-content > img {
+    width: 220px;
+    height: 330px;
+    margin-left: 20px;
+}
+
+.player-info {
+    margin-left: 50px;
+}
+
+#name_kr {
+    width: 480px;
+}
