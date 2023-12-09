@@ -1,0 +1,67 @@
+#board_container {
+    width: 800px;
+    margin: 100px 400px 0 400px;
+}
+
+#board_container span {
+    font-size: small;
+}
+
+#post-container {
+    width: 800px;
+    margin-top: 50px;
+    position: relative;
+}
+
+#select {
+    margin-bottom: 20px;
+}
+
+.post {
+    width: 800px;
+    height: 50px;
+    border-top: 1px solid black;
+    line-height: 3;
+}
+
+#post_title {
+    width: 800px;
+    height: 40px;
+    border-top: 1px solid black;
+    line-height: 2.3;
+}
+
+#post_title > span,
+.post > span {
+    display: inline-block;
+    text-align: center;
+}
+
+.number {
+    width: 50px;
+}
+
+.team {
+    width: 170px;
+}
+
+.title {
+    width: 360px;
+}
+
+.writer {
+    width: 100px;
+}
+
+.created_at {
+    width: 100px;
+}
+
+#post-container div:nth-child(5) {
+    border-bottom: 1px solid black;
+}
+
+#create_post_button {
+    position: absolute;
+    right: 0;
+}
