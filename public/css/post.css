@@ -1,0 +1,28 @@
+#create_post_container {
+    width: 800px;
+    margin: 100px 400px 0 400px;
+    position: relative;
+}
+
+#title {
+    width: 700px;
+}
+
+#content {
+    width: 735px;
+    height: 600px;
+    box-sizing: border-box;
+    display: block;
+    resize: none;
+}
+
+#submit_button {
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    position: absolute;
+    right: 60px;
+}
