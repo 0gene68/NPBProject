@@ -71,36 +71,25 @@
           <span class="writer">작성자</span>
           <span class="created_at">작성일자</span>
         </div>
+        @foreach ($posts as $post)
         <div class="post">
-          <span class="number">1</span>
-          <span class="team">응원팀</span>
-          <span class="title">제목</span>
-          <span class="writer">작성자</span>
-          <span class="created_at">작성일자</span>
+          <span class="number">{{$post->id}}</span>
+          <span class="team">{{$post->team}}</span>
+          <span class="title">{{$post->title}}</span>
+          <span class="writer">{{$post->user_name}}</span>
+          <span class="created_at">{{\Carbon\Carbon::parse($post->created_at)->format('Y-m-d')}}</span>
         </div>
-        <div class="post">        
-          <span class="number">2</span>  
-          <span class="team">응원팀</span>
-          <span class="title">제목</span>
-          <span class="writer">작성자</span>
-          <span class="created_at">작성일자</span>
-        </div>
-        <div class="post">       
-          <span class="number">3</span>   
-          <span class="team">응원팀</span>
-          <span class="title">제목</span>
-          <span class="writer">작성자</span>
-          <span class="created_at">작성일자</span>
-        </div>
+        @endforeach
         <br>
         <div style="display: none" id="isLoggedIn">{{$isLoggedIn}}</div>
         <a href="/create_post" id="create_post_link">
           <button id="create_post_button">글 작성</button>
-        </a>
+        </a> 
     </div>
   </div>
-  <div id="footer" style="color: white">{{$isLoggedIn}}</div>
+  <div id="footer" style="color: white"></div>
 
   <script src="{{ asset('js/board.js') }}"></script>
+  <script src="{{ asset('js/logout.js') }}"></script>
 </body>
 </html>
