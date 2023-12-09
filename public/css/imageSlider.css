@@ -1,0 +1,63 @@
+body {
+    font-family: "자이언츠 Regular";
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    padding-top: 30px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    max-width: 500px;
+}
+
+.slider img {
+    width: 500px;
+    height: 500px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.prev-button {
+    position: absolute;
+    top: 425px;
+    left: 0;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+.next-button {
+    position: absolute;
+    top: 425px;
+    right: 0;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+#teamName {
+    width: 400px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    right: 0px;
+    top: 650px;
+    border-radius: 5px;
+}
