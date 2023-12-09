@@ -36,9 +36,10 @@ Route::get('/', function () {
     $teams = Team::all();
     $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
     $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
+    $user = Auth::user();
 
     if(Auth::check()) {
-        return view('logged_in.welcome_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
+        return view('logged_in.welcome_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);   
     } else {
         return view('non_logged_in.welcome_non_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
     }
@@ -49,7 +50,8 @@ Route::get('/teams', function() {
     $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
 
     if(Auth::check()) {
-        return view('logged_in.teams_logged_in', ['centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
+        $user = Auth::user();
+        return view('logged_in.teams_logged_in', ['centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);
     } else {
         return view('non_logged_in.teams_non_logged_in', ['centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
     }
@@ -61,7 +63,8 @@ Route::get('/rank', function() {
     $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
 
     if(Auth::check()) {
-        return view('logged_in.welcome_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
+        $user = Auth::user();
+        return view('logged_in.welcome_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);   
     } else {
         return view('non_logged_in.rank_non_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
     }
@@ -69,19 +72,22 @@ Route::get('/rank', function() {
 
 Route::get('/board', function() {
     $isLoggedIn = null;
+
+    $posts = DB::select("SELECT * FROM posts");
+
     if(Auth::check()) {
+        $user = Auth::user();
         $isLoggedIn = "true";
-        return view('logged_in.posts_logged_in', ['isLoggedIn'=>$isLoggedIn]);
+        return view('logged_in.posts_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'user'=>$user]);
     } else {
         $isLoggedIn = "false";
-        return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn]);
+        return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts]);
     }
-
-    return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn]);
 });
 
 Route::get('/create_post', function() {
-    return view('logged_in.post_logged_in');
+    $user = Auth::user();
+    return view('logged_in.post_logged_in', ['user'=>$user]);
 });
 
 Route::post('/post', function(Request $request) {
@@ -114,7 +120,8 @@ Route::get('/{team_id}', function(string $team_id) {
     $championYears = Team::where('team_id', $team_id)->first()->championYears()->get();
 
     if(Auth::check()) {
-        return view('logged_in.team_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears]);
+        $user = Auth::user();
+        return view('logged_in.team_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears, 'user'=>$user]);
     } else {
         return view('non_logged_in.team_non_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears]);
     }
