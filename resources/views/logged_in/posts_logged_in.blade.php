@@ -36,7 +36,7 @@
           </ul>
           <ul>
               <a href="/dashboard">
-                  <li>마이페이지</li>
+                  <li id="userName">{{$user->name}}</li>
               </a>
               <li id="logout-btn">로그아웃</li>
               <form id="logout-form" method="POST" action="{{ route('logout') }}">
