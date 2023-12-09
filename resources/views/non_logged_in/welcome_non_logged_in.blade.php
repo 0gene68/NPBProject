@@ -27,8 +27,8 @@
                     <a href="/teams">
                         <li>구단 · 선수</li>
                     </a>
-                    <a href="/">
-                        <li>N/A</li>
+                    <a href="/board">
+                        <li>자유게시판</li>
                     </a>
                     <a href="/">
                         <li>N/A</li>

@@ -12,7 +12,7 @@
   {{-- 비로그인 헤더 --}}
   <div id="header">
     <div id="mainLogo">
-        <a href="/rank">
+        <a href="/">
           <img src="storage/images/logos/NPB_logo.svg.png" alt="" id="logoImage" />
         </a>    
     </div>
@@ -21,14 +21,14 @@
         <a href="/">
           <li>일정</li>
         </a>
-        <a href="/">
+        <a href="/rank">
           <li>순위</li>
         </a>
         <a href="/teams">
           <li>구단 · 선수</li>
         </a>
-        <a href="/">
-          <li>N/A</li>
+        <a href="/board">
+          <li>게시판</li>
         </a>
         <a href="/">
           <li>N/A</li>
