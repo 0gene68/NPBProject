@@ -93,7 +93,7 @@ return [
     'min' => [
         'numeric' => ':attributeには、:min以上の数字を指定してください。',
         'file' => ':attributeには、:min kb以上のファイルを指定してください。',
-        'string' => ':attribute는、:min글자 이상으로 지정해 주세요',
+        'string' => ':attribute는 :min글자 이상으로 지정해 주세요',
         'array' => ':attributeは:min個以上指定してください。',
     ],
     'min_digits' => ':attributeは、:min桁以上で指定してください。',
@@ -218,7 +218,7 @@ return [
         'minute' => '分',
         'mobile' => '携帯',
         'month' => '月',
-        'name' => '名前',
+        'name' => '이름',
         'national_code' => '国コード',
         'number' => '番号',
         'password' => '비밀번호',
