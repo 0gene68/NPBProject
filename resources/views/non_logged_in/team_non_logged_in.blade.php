@@ -65,19 +65,14 @@
         </div>
     </div>
     <br>
-    <div id="menus">
-        <h2 id="player_info">등록 선수 정보</h2>
-        <h2 id="comments">응원 댓글</h2>
-        <h2 id="wait">N/A</h2>
-    </div>
-    {{-- <h2 id="toggle-title">등록 선수 정보</h2> --}}
+    <h2 id="player_info">등록 선수 정보</h2>
     <div id="toggle-container">
-        <h3 class="toggle-button">　투수</h3>
-        <br>
-        <div class="toggle-content">
-            @foreach ($pitchers as $pitcher)
-            <div class="box" onclick="openModal('{{$pitcher->backNumber}}', '{{$pitcher->name_kr}}', '{{$pitcher->name_jp}}', '{{$pitcher->birthDate}}', '{{$pitcher->position}}','{{$pitcher->throw_bat}}')">
-                <img src="storage/images/{{$team_id}}/{{$team_id}}{{$pitcher->backNumber}}.jpg" class="player-image" alt="">
+      <h3 class="toggle-button">　투수</h3>
+      <br>
+      <div class="toggle-content">
+        @foreach ($pitchers as $pitcher)
+          <div class="box" onclick="openModal('{{$pitcher->backNumber}}', '{{$pitcher->name_kr}}', '{{$pitcher->name_jp}}', '{{$pitcher->birthDate}}', '{{$pitcher->position}}','{{$pitcher->throw_bat}}','{{$pitcher->origin}}')">
+            <img src="storage/images/{{$team_id}}/{{$team_id}}{{$pitcher->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$pitcher->backNumber}} {{$pitcher->name_kr}}</div>
             </div>
             @endforeach
@@ -86,19 +81,19 @@
         <h3 class="toggle-button">　포수</h3>
         <br>
         <div class="toggle-content">
-            @foreach ($catchers as $catcher)
-            <div class="box" onclick="openModal('{{$catcher->backNumber}}', '{{$catcher->name_kr}}', '{{$catcher->name_jp}}', '{{$catcher->birthDate}}', '{{$catcher->position}}','{{$catcher->throw_bat}}')">
-                <img src="storage/images/{{$team_id}}/{{$team_id}}{{$catcher->backNumber}}.jpg" class="player-image" alt="">
-                <div>{{$catcher->backNumber}} {{$catcher->name_kr}}</div>
-            </div>
-            @endforeach
+          @foreach ($catchers as $catcher)
+          <div class="box" onclick="openModal('{{$catcher->backNumber}}', '{{$catcher->name_kr}}', '{{$catcher->name_jp}}', '{{$catcher->birthDate}}', '{{$catcher->position}}','{{$catcher->throw_bat}}','{{$catcher->origin}}')">
+            <img src="storage/images/{{$team_id}}/{{$team_id}}{{$catcher->backNumber}}.jpg" class="player-image" alt="">
+            <div>{{$catcher->backNumber}} {{$catcher->name_kr}}</div>
+          </div>
+          @endforeach
         </div>
         <br>
         <h3 class="toggle-button">　내야수</h3>
         <br>
         <div class="toggle-content">
             @foreach ($infielders as $infielder)
-            <div class="box" onclick="openModal('{{$infielder->backNumber}}', '{{$infielder->name_kr}}', '{{$infielder->name_jp}}', '{{$infielder->birthDate}}', '{{$infielder->position}}','{{$infielder->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$infielder->backNumber}}', '{{$infielder->name_kr}}', '{{$infielder->name_jp}}', '{{$infielder->birthDate}}', '{{$infielder->position}}','{{$infielder->throw_bat}}','{{$infielder->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$infielder->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$infielder->backNumber}} {{$infielder->name_kr}}</div>
             </div>
@@ -109,7 +104,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($outfielders as $outfielder)
-            <div class="box" onclick="openModal('{{$outfielder->backNumber}}', '{{$outfielder->name_kr}}', '{{$outfielder->name_jp}}', '{{$outfielder->birthDate}}', '{{$outfielder->position}}','{{$outfielder->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$outfielder->backNumber}}', '{{$outfielder->name_kr}}', '{{$outfielder->name_jp}}', '{{$outfielder->birthDate}}', '{{$outfielder->position}}','{{$outfielder->throw_bat}}','{{$outfielder->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$outfielder->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$outfielder->backNumber}} {{$outfielder->name_kr}}</div>
             </div>
@@ -120,7 +115,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($nurtures as $nurture)
-            <div class="box" onclick="openModal('{{$nurture->backNumber}}', '{{$nurture->name_kr}}', '{{$nurture->name_jp}}', '{{$nurture->birthDate}}', '{{$nurture->position}}', '{{$nurture->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$nurture->backNumber}}', '{{$nurture->name_kr}}', '{{$nurture->name_jp}}', '{{$nurture->birthDate}}', '{{$nurture->position}}', '{{$nurture->throw_bat}}','{{$nurture->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$nurture->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$nurture->backNumber}} {{$nurture->name_kr}}</div>
             </div>
@@ -130,30 +125,17 @@
     <div id="modal-background" onclick="closeModal()">
         <div id="modal" class="modal"> 
             <div class="modal-content">
-                <img src="storage/images/{{$team_id}}/{{$team_id}}" class="player-image" alt="">
+                <img src="" class="player-image" alt="">
                 <div class="player-info">
                     <h1 id="name_kr"></h1>
                     <h4 id="name_jp"></h4>
                     <h4 id="birthDate"></h4>
                     <h4 id="position"></h4>
                     <h4 id="throw_bat"></h4>
+                    <h4 id="origin"></h4>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="comment-container">
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <form action="/comments" method="POST" id="comment_form" >
-            @csrf
-            <input type="hidden" name="team_id" value="{{$selectedTeam->team_id}}">
-            <input type="text" name="content" id="comment_content" autocomplete="off">
-            <input type="submit" value="등록" id="register_button">
-        </form>
-    </div>
-    <div id="test3">
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem neque quos! Culpa reiciendis facere amet delectus, earum dolorum cum nisi rerum aspernatur, minima ducimus fugit sunt voluptatem perspiciatis totam quae dicta magnam labore. Officiis amet consectetur placeat nam nulla, quam neque quia vero quis fugiat, error nostrum rerum modi officia mollitia illum, accusamus voluptatum velit aliquid distinctio iure saepe earum aspernatur. Alias repellat modi asperiores dolore optio dolorum distinctio, ipsa ex sapiente nam, reiciendis quidem, impedit rerum quaerat unde eaque. Quas aliquid eligendi nobis laborum tenetur. Sapiente, quibusdam dolorem, adipisci obcaecati iste tempora, dolores dolorum ut distinctio esse reiciendis.</div>
     </div>
     <div id="footer"></div>
     <script src="{{ asset('js/playerList.js') }}"></script>

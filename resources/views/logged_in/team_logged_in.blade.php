@@ -77,7 +77,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($pitchers as $pitcher)
-            <div class="box" onclick="openModal('{{$pitcher->backNumber}}', '{{$pitcher->name_kr}}', '{{$pitcher->name_jp}}', '{{$pitcher->birthDate}}', '{{$pitcher->position}}','{{$pitcher->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$pitcher->backNumber}}', '{{$pitcher->name_kr}}', '{{$pitcher->name_jp}}', '{{$pitcher->birthDate}}', '{{$pitcher->position}}', '{{$pitcher->throw_bat}}', '{{$pitcher->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$pitcher->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$pitcher->backNumber}} {{$pitcher->name_kr}}</div>
             </div>
@@ -88,7 +88,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($catchers as $catcher)
-            <div class="box" onclick="openModal('{{$catcher->backNumber}}', '{{$catcher->name_kr}}', '{{$catcher->name_jp}}', '{{$catcher->birthDate}}', '{{$catcher->position}}','{{$catcher->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$catcher->backNumber}}', '{{$catcher->name_kr}}', '{{$catcher->name_jp}}', '{{$catcher->birthDate}}', '{{$catcher->position}}','{{$catcher->throw_bat}}', '{{$catcher->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$catcher->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$catcher->backNumber}} {{$catcher->name_kr}}</div>
             </div>
@@ -99,7 +99,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($infielders as $infielder)
-            <div class="box" onclick="openModal('{{$infielder->backNumber}}', '{{$infielder->name_kr}}', '{{$infielder->name_jp}}', '{{$infielder->birthDate}}', '{{$infielder->position}}','{{$infielder->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$infielder->backNumber}}', '{{$infielder->name_kr}}', '{{$infielder->name_jp}}', '{{$infielder->birthDate}}', '{{$infielder->position}}','{{$infielder->throw_bat}}', '{{$infielder->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$infielder->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$infielder->backNumber}} {{$infielder->name_kr}}</div>
             </div>
@@ -110,7 +110,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($outfielders as $outfielder)
-            <div class="box" onclick="openModal('{{$outfielder->backNumber}}', '{{$outfielder->name_kr}}', '{{$outfielder->name_jp}}', '{{$outfielder->birthDate}}', '{{$outfielder->position}}','{{$outfielder->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$outfielder->backNumber}}', '{{$outfielder->name_kr}}', '{{$outfielder->name_jp}}', '{{$outfielder->birthDate}}', '{{$outfielder->position}}','{{$outfielder->throw_bat}}', '{{$outfielder->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$outfielder->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$outfielder->backNumber}} {{$outfielder->name_kr}}</div>
             </div>
@@ -121,7 +121,7 @@
         <br>
         <div class="toggle-content">
             @foreach ($nurtures as $nurture)
-            <div class="box" onclick="openModal('{{$nurture->backNumber}}', '{{$nurture->name_kr}}', '{{$nurture->name_jp}}', '{{$nurture->birthDate}}', '{{$nurture->position}}', '{{$nurture->throw_bat}}')">
+            <div class="box" onclick="openModal('{{$nurture->backNumber}}', '{{$nurture->name_kr}}', '{{$nurture->name_jp}}', '{{$nurture->birthDate}}', '{{$nurture->position}}', '{{$nurture->throw_bat}}', '{{$nurture->origin}}')">
                 <img src="storage/images/{{$team_id}}/{{$team_id}}{{$nurture->backNumber}}.jpg" class="player-image" alt="">
                 <div>{{$nurture->backNumber}} {{$nurture->name_kr}}</div>
             </div>
@@ -138,6 +138,7 @@
                     <h4 id="birthDate"></h4>
                     <h4 id="position"></h4>
                     <h4 id="throw_bat"></h4>
+                    <h4 id="origin"></h4>
                 </div>
             </div>
         </div>
