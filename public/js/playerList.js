@@ -34,19 +34,23 @@ const openModal = (
     nameJp,
     birthDate,
     position,
-    throwBat
+    throwBat,
+    origin
 ) => {
     const nameKrElement = document.getElementById("name_kr");
     const nameJpElement = document.getElementById("name_jp");
     const birthDateElement = document.getElementById("birthDate");
     const positionElement = document.getElementById("position");
     const throwBatElement = document.getElementById("throw_bat");
+    const originElement = document.getElementById("origin");
 
+    console.log(originElement);
     nameKrElement.innerHTML = `${backNumber} ${nameKr}`;
     nameJpElement.innerHTML = `${nameJp}`;
     birthDateElement.innerHTML = `생년월일 | ${birthDate}`;
     throwBatElement.innerHTML = `투/타 | ${throwBat}`;
     positionElement.innerHTML = `포지션 | ${position}`;
+    originElement.innerHTML = `출신지 | ${origin}`;
 
     const playerImageElement = document.querySelector(".modal-content > img");
 
