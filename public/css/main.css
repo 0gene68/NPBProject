@@ -93,10 +93,56 @@ li:hover {
 }
 
 #footer {
-    width: 100%;
+    width: 98.7%;
     height: 200px;
     background-color: black;
+    color: white;
+    padding: 20px 10px 20px 10px;
+    font-weight: 0.5em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-top: 50px;
+}
+
+#teamHomepageLinks {
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#centralTeams {
+    margin-left: 180px;
+}
+
+#pacificTeams {
+    margin-right: 180px;
+}
+
+.teamLogos {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px 0 20px;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.teamLogos:hover {
+    opacity: 0.5;
+}
+
+.pacificLogo {
+    width: 100px;
+    height: 50px;
+    margin: 0 20px 0 20px;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+#footer a:hover {
+    opacity: 0.9;
 }
