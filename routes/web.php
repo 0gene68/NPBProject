@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Post;
 use App\Models\Team;
@@ -64,7 +63,7 @@ Route::get('/rank', function() {
 
     if(Auth::check()) {
         $user = Auth::user();
-        return view('logged_in.welcome_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);   
+        return view('logged_in.rank_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);   
     } else {
         return view('non_logged_in.rank_non_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
     }
@@ -78,16 +77,16 @@ Route::get('/board', function() {
     if(Auth::check()) {
         $user = Auth::user();
         $isLoggedIn = "true";
-        return view('logged_in.posts_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'user'=>$user]);
+        return view('logged_in.board_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'user'=>$user]);
     } else {
         $isLoggedIn = "false";
-        return view('non_logged_in.posts_non_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts]);
+        return view('non_logged_in.board_non_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts]);
     }
 });
 
 Route::get('/create_post', function() {
     $user = Auth::user();
-    return view('logged_in.post_logged_in', ['user'=>$user]);
+    return view('logged_in.create_post_logged_in', ['user'=>$user]);
 });
 
 Route::post('/post', function(Request $request) {
@@ -105,6 +104,13 @@ Route::post('/post', function(Request $request) {
     $post->save();
 
     return redirect('/board')->with('success', '포스트가 등록되었습니다.');;
+});
+
+Route::delete('/posts/{id}', function(Request $request, $id) {
+    $post = Post::find($id);
+    $post->delete();
+
+    return redirect('/board');
 });
 
 
@@ -128,5 +134,5 @@ Route::get('/{team_id}', function(string $team_id) {
 })->where('team_id', 'Tigers|Buffaloes|Carp|Marines|Baystars|Hawks|Giants|Eagles|Swallows|Lions|Dragons|Fighters');
 
 
-Route::resource('comments', CommentsController::class);
+
 
