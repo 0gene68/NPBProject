@@ -43,7 +43,7 @@
 }
 
 .title {
-    width: 340px;
+    width: 260px;
 }
 
 .writer {
@@ -54,11 +54,11 @@
     width: 170px;
 }
 
-#post-container div:last-child {
-    border-bottom: 1px solid black;
-}
-
-#show_post {
+#show_post,
+.modify_post,
+#delete_post {
+    width: 40px;
+    height: 22px;
     background-color: white;
     border: none;
     opacity: 1;
@@ -66,8 +66,20 @@
     cursor: pointer;
 }
 
-#show_post:hover {
+#show_post:hover,
+.modify_post:hover,
+#delete_post:hover {
     opacity: 0.5;
+}
+
+.modify_post {
+    text-decoration: none;
+    color: black;
+}
+
+#delete_form {
+    width: 50px;
+    height: 22px;
 }
 
 #create_post_button {
@@ -125,20 +137,15 @@
 
 #content {
     height: 300px;
+    overflow-y: auto;
+}
+
+#content &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .post-info button {
     position: absolute;
     width: 60px;
     height: 30px;
-    /* background-color: white;
-    border: none; */
-}
-
-#post-modify {
-    right: 120px;
-}
-
-#post-delete {
-    right: 50px;
 }
