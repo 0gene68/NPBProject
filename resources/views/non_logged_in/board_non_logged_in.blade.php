@@ -100,10 +100,6 @@
           <hr>
           <h4 id="content"></h4>
           <hr>
-          <div class="post-info">
-            <button id="post-modify">수정</button>
-            <button id="post-delete">삭제</button>
-          </div>
         </div>
     </div>
   </div>
