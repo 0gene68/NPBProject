@@ -31,9 +31,6 @@
                 <a href="/board">
                     <li>게시판</li>
                 </a>
-                <a href="/">
-                    <li>N/A</li>
-                </a>
             </ul>
             <ul>
                 <a href="/dashboard">
