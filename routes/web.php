@@ -77,7 +77,6 @@ Route::get('/board', function() {
     $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
     $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
 
-
     if(Auth::check()) {
         $user = Auth::user();
         $isLoggedIn = "true";
@@ -90,7 +89,12 @@ Route::get('/board', function() {
 
 Route::get('/create_post', function() {
     $user = Auth::user();
-    return view('logged_in.create_post_logged_in', ['user'=>$user]);
+
+    $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
+    $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
+
+
+    return view('logged_in.create_post_logged_in', ['user'=>$user, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
 });
 
 Route::post('/post', function(Request $request) {
