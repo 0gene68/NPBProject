@@ -74,13 +74,17 @@ Route::get('/board', function() {
 
     $posts = DB::select("SELECT * FROM posts ORDER BY id DESC");
 
+    $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
+    $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
+
+
     if(Auth::check()) {
         $user = Auth::user();
         $isLoggedIn = "true";
-        return view('logged_in.board_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'user'=>$user]);
+        return view('logged_in.board_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'user'=>$user, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
     } else {
         $isLoggedIn = "false";
-        return view('non_logged_in.board_non_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts]);
+        return view('non_logged_in.board_non_logged_in', ['isLoggedIn'=>$isLoggedIn, 'posts'=>$posts, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
     }
 });
 
@@ -125,11 +129,15 @@ Route::get('/{team_id}', function(string $team_id) {
 
     $championYears = Team::where('team_id', $team_id)->first()->championYears()->get();
 
+    $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
+    $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
+
+
     if(Auth::check()) {
         $user = Auth::user();
-        return view('logged_in.team_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears, 'user'=>$user]);
+        return view('logged_in.team_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears, 'user'=>$user, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
     } else {
-        return view('non_logged_in.team_non_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears]);
+        return view('non_logged_in.team_non_logged_in', ['team_id'=>$team_id, 'selectedTeam'=>$selectedTeam, 'pitchers'=>$pitchers, 'catchers'=>$catchers, 'infielders'=>$infielders, 'outfielders'=>$outfielders, 'nurtures'=>$nurtures, 'championYears'=>$championYears, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);
     }
 })->where('team_id', 'Tigers|Buffaloes|Carp|Marines|Baystars|Hawks|Giants|Eagles|Swallows|Lions|Dragons|Fighters');
 
