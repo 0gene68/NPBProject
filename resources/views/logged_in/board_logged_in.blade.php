@@ -114,6 +114,36 @@
         </div>
       </div>
     </div>
+    {{-- 푸터 --}}
+    <div id="footer">
+      <div id="teamHomepageLinks">
+          <div id="centralTeams">
+              @foreach ($centralTeams as $centralTeam)
+                  <a href="{{$centralTeam->homepageLink}}">
+                      <img src="storage/images/logos/{{$centralTeam->team_id}}.svg" alt="꽥!" class="teamLogos">
+                  </a>
+              @endforeach                    
+          </div>
+          <div id="pacificTeams">
+              @foreach ($pacificTeams as $pacificTeam)
+                  @if ($pacificTeam->team_id == 'Fighters')
+                      <a href="{{$pacificTeam->homepageLink}}">
+                          <img src="storage/images/logos/{{$pacificTeam->team_id}}.png" alt="꽥!" class="teamLogos">
+                      </a>
+                  @else
+                      <a href="{{$pacificTeam->homepageLink}}">
+                          <img src="storage/images/logos/{{$pacificTeam->team_id}}.svg" alt="꽥!" class="teamLogos">
+                      </a>
+                  @endif
+              @endforeach
+          </div>
+      </div>
+      
+      <div>* 모든 선수 정보는 2023 시즌 기준입니다.</div><br>
+      <div>* 아이디어 제공: 
+          <a href="https://npb.jp/">▶ NPB 사이트</a>
+      </div>
+  </div>
 
   <script src="{{ asset('js/board.js') }}"></script>
   <script src="{{ asset('js/logout.js') }}"></script>

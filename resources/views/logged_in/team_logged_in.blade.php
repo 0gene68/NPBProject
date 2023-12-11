@@ -66,12 +66,7 @@
         </div>
     </div>
     <br>
-    <div id="menus">
-        <h2 id="player_info">등록 선수 정보</h2>
-        <h2 id="comments">응원 댓글</h2>
-        <h2 id="wait">N/A</h2>
-    </div>
-    {{-- <h2 id="toggle-title">등록 선수 정보</h2> --}}
+    <h2 id="player-info">등록 선수 정보</h2>
     <div id="toggle-container">
         <h3 class="toggle-button">　투수</h3>
         <br>
@@ -143,21 +138,36 @@
             </div>
         </div>
     </div>
-    <div id="comment-container">
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, delectus!</div>
-        <form action="/comments" method="POST" id="comment_form" >
-            @csrf
-            <input type="hidden" name="team_id" value="{{$selectedTeam->team_id}}">
-            <input type="text" name="content" id="comment_content" autocomplete="off" placeholder="댓글을 입력하세요">
-            <input type="submit" value="등록" id="register_button">
-        </form>
+    {{-- 푸터 --}}
+    <div id="footer">
+        <div id="teamHomepageLinks">
+            <div id="centralTeams">
+                @foreach ($centralTeams as $centralTeam)
+                    <a href="{{$centralTeam->homepageLink}}">
+                        <img src="storage/images/logos/{{$centralTeam->team_id}}.svg" alt="꽥!" class="teamLogos">
+                    </a>
+                @endforeach                    
+            </div>
+            <div id="pacificTeams">
+                @foreach ($pacificTeams as $pacificTeam)
+                    @if ($pacificTeam->team_id == 'Fighters')
+                        <a href="{{$pacificTeam->homepageLink}}">
+                            <img src="storage/images/logos/{{$pacificTeam->team_id}}.png" alt="꽥!" class="teamLogos">
+                        </a>
+                    @else
+                        <a href="{{$pacificTeam->homepageLink}}">
+                            <img src="storage/images/logos/{{$pacificTeam->team_id}}.svg" alt="꽥!" class="teamLogos">
+                        </a>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        
+        <div>* 모든 선수 정보는 2023 시즌 기준입니다.</div><br>
+        <div>* 아이디어 제공: 
+            <a href="https://npb.jp/">▶ NPB 사이트</a>
+        </div>
     </div>
-    <div id="test3">
-        <img src="storage/images/Baseball_diamond.jpg" alt="으악!" id="diamond_img">
-    </div>
-    <div id="footer" style="color: white"></div>
     <script src="{{ asset('js/playerList.js') }}"></script>
     <script src="{{ asset('js/team.js') }}"></script>
     <script src="{{ asset('js/logout.js') }}"></script>
