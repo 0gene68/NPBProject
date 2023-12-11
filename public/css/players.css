@@ -1,10 +1,14 @@
+#player-info {
+    margin-left: 310px;
+}
+
 #toggle-title {
     margin-left: 310px;
     position: relative;
 }
 
 #toggle-container {
-    margin: 0 310px 0 310px;
+    margin: 20px 310px 0 310px;
     position: relative;
 }
 
