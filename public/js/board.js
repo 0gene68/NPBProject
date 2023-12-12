@@ -27,8 +27,8 @@ selectTeam.addEventListener("change", () => {
     }
 });
 
-const modalBackground = document.getElementById("modal-background");
-const modal = document.getElementById("modal");
+const modalInfoBackground = document.getElementById("modal-info-background");
+const modalInfo = document.getElementsByClassName("modal")[0];
 
 const openModal = (title, team, content, writer, created_at) => {
     const titleElement = document.getElementById("title");
@@ -43,11 +43,45 @@ const openModal = (title, team, content, writer, created_at) => {
     writerElement.innerHTML = `${writer}`;
     createdAtElement.innerHTML = `${created_at}`;
 
-    modalBackground.style.display = "flex";
-    modal.style.display = "block";
+    modalInfoBackground.style.display = "flex";
+    modalInfo.style.display = "block";
 };
 
 const closeModal = () => {
-    modalBackground.style.display = "none";
-    modal.style.display = "none";
+    modalInfoBackground.style.display = "none";
+    modalModifyBackground.style.display = "none";
+    modalInfo.style.display = "none";
+    modalModify.style.display = "none";
+};
+
+modalInfoBackground.addEventListener("click", closeModal);
+modalInfo.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
+
+const modalModifyBackground = document.getElementById(
+    "modal-modify-background"
+);
+const modalModify = document.getElementsByClassName("modal")[1];
+
+modalModifyBackground.addEventListener("click", closeModal);
+modalModify.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
+
+const openModalModify = (id, title, team, content) => {
+    console.log(id, title, team, content);
+    const modifyForm = document.getElementById("modify-form");
+    modifyForm.action = `/posts/${id}`;
+
+    const titleElement = document.getElementById("modify-title");
+    const selectElement = document.getElementById("modify-select");
+    const contentElement = document.getElementById("modify-content");
+
+    titleElement.value = title;
+    selectElement.value = team;
+    contentElement.innerText = content;
+
+    modalModifyBackground.style.display = "flex";
+    modalModify.style.display = "block";
 };
