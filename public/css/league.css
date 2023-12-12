@@ -109,11 +109,6 @@
     display: flex;
 }
 
-#pennantRace-container,
-#climaxSeries-container,
-#japanSeries-container {
-}
-
 #season-container div h2 {
     width: 300px;
     border: 1px solid black;
