@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('css/board.css') }}">
 </head>
-<body>
     {{-- 로그인 헤더 --}}
     <div id="header">
       <div id="mainLogo">
@@ -18,8 +17,8 @@
       </div>
       <div id="wrap">
           <ul>
-              <a href="/">
-                  <li>일정</li>
+              <a href="/league">
+                  <li>NPB 리그</li>
               </a>
               <a href="/rank">
                   <li>순위</li>
