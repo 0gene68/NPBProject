@@ -83,3 +83,278 @@ pacificRankTableContainer.innerHTML = `
     </div>
     ${rankingTablePacific}
 `;
+
+/* ---------------------------------------------------------------------- */
+
+/* 센트럴 투수 li 태그 선택 */
+const centralEra = document.querySelector("#centralPitcher .era");
+const centralWins = document.querySelector("#centralPitcher .wins");
+const centralKs = document.querySelector("#centralPitcher .ks");
+const centralSaves = document.querySelector("#centralPitcher .saves");
+const centralHolds = document.querySelector("#centralPitcher .holds");
+
+/* 센트럴 투수 이미지 선택 */
+const centralPitcherImage = document.getElementById("centralPitcherWinner");
+
+/* 센트럴 투수 테이블 선택 */
+const centralEraRank = document.getElementById("centralEraRank");
+const centralWinsRank = document.getElementById("centralWinsRank");
+const centralKsRank = document.getElementById("centralKsRank");
+const centralSavesRank = document.getElementById("centralSavesRank");
+const centralHoldsRank = document.getElementById("centralHoldsRank");
+
+centralEra.addEventListener("click", function () {
+    centralPitcherImage.src = "/storage/images/Tigers/Tigers41.jpg";
+
+    centralEraRank.style.display = "block";
+    centralWinsRank.style.display = "none";
+    centralKsRank.style.display = "none";
+    centralSavesRank.style.display = "none";
+    centralHoldsRank.style.display = "none";
+});
+
+centralWins.addEventListener("click", function () {
+    centralPitcherImage.src = "/storage/images/Baystars/Baystars11.jpg";
+
+    centralEraRank.style.display = "none";
+    centralWinsRank.style.display = "block";
+    centralKsRank.style.display = "none";
+    centralSavesRank.style.display = "none";
+    centralHoldsRank.style.display = "none";
+});
+
+centralKs.addEventListener("click", function () {
+    centralPitcherImage.src = "/storage/images/Baystars/Baystars21.jpg";
+
+    centralEraRank.style.display = "none";
+    centralWinsRank.style.display = "none";
+    centralKsRank.style.display = "block";
+    centralSavesRank.style.display = "none";
+    centralHoldsRank.style.display = "none";
+});
+
+centralSaves.addEventListener("click", function () {
+    centralPitcherImage.src = "/storage/images/Tigers/Tigers13.jpg";
+
+    centralEraRank.style.display = "none";
+    centralWinsRank.style.display = "none";
+    centralKsRank.style.display = "none";
+    centralSavesRank.style.display = "block";
+    centralHoldsRank.style.display = "none";
+});
+
+centralHolds.addEventListener("click", function () {
+    centralPitcherImage.src = "/storage/images/Carp/Carp43.jpg";
+
+    centralEraRank.style.display = "none";
+    centralWinsRank.style.display = "none";
+    centralKsRank.style.display = "none";
+    centralSavesRank.style.display = "none";
+    centralHoldsRank.style.display = "block";
+});
+
+/* ---------------------------------------------------------------------- */
+/* 퍼시픽 투수 li 태그 선택 */
+const pacificEra = document.querySelector("#pacificPitcher .era");
+const pacificWins = document.querySelector("#pacificPitcher .wins");
+const pacificKs = document.querySelector("#pacificPitcher .ks");
+const pacificSaves = document.querySelector("#pacificPitcher .saves");
+const pacificHolds = document.querySelector("#pacificPitcher .holds");
+
+/* 센트럴 투수 이미지 선택 */
+const pacificPitcherImage = document.getElementById("pacificPitcherWinner");
+
+/* 센트럴 투수 테이블 선택 */
+const pacificEraRank = document.getElementById("pacificEraRank");
+const pacificWinsRank = document.getElementById("pacificWinsRank");
+const pacificKsRank = document.getElementById("pacificKsRank");
+const pacificSavesRank = document.getElementById("pacificSavesRank");
+const pacificHoldsRank = document.getElementById("pacificHoldsRank");
+
+pacificEra.addEventListener("click", function () {
+    pacificPitcherImage.src = "/storage/images/Buffaloes/Buffaloes18.jpg";
+
+    pacificEraRank.style.display = "block";
+    pacificWinsRank.style.display = "none";
+    pacificKsRank.style.display = "none";
+    pacificSavesRank.style.display = "none";
+    pacificHoldsRank.style.display = "none";
+});
+
+pacificWins.addEventListener("click", function () {
+    pacificPitcherImage.src = "/storage/images/Buffaloes/Buffaloes18.jpg";
+
+    pacificEraRank.style.display = "none";
+    pacificWinsRank.style.display = "block";
+    pacificKsRank.style.display = "none";
+    pacificSavesRank.style.display = "none";
+    pacificHoldsRank.style.display = "none";
+});
+
+pacificKs.addEventListener("click", function () {
+    pacificPitcherImage.src = "/storage/images/Buffaloes/Buffaloes18.jpg";
+
+    pacificEraRank.style.display = "none";
+    pacificWinsRank.style.display = "none";
+    pacificKsRank.style.display = "block";
+    pacificSavesRank.style.display = "none";
+    pacificHoldsRank.style.display = "none";
+});
+
+pacificSaves.addEventListener("click", function () {
+    pacificPitcherImage.src = "/storage/images/Eagles/Eagles1.jpg";
+
+    pacificEraRank.style.display = "none";
+    pacificWinsRank.style.display = "none";
+    pacificKsRank.style.display = "none";
+    pacificSavesRank.style.display = "block";
+    pacificHoldsRank.style.display = "none";
+});
+
+pacificHolds.addEventListener("click", function () {
+    pacificPitcherImage.src = "/storage/images/Marines/Marines55.jpg";
+
+    pacificEraRank.style.display = "none";
+    pacificWinsRank.style.display = "none";
+    pacificKsRank.style.display = "none";
+    pacificSavesRank.style.display = "none";
+    pacificHoldsRank.style.display = "block";
+});
+
+/* ---------------------------------------------------------------------- */
+
+/* 센트럴 타자 li 태그 선택 */
+const centralAverage = document.querySelector("#centralBatter .average");
+const centralHomerun = document.querySelector("#centralBatter .homerun");
+const centralRbi = document.querySelector("#centralBatter .rbi");
+const centralHits = document.querySelector("#centralBatter .hits");
+const centralSteals = document.querySelector("#centralBatter .steals");
+
+/* 센트럴 타자 이미지 선택 */
+const centralBatterImage = document.getElementById("centralBatterWinner");
+
+/* 센트럴 타자 테이블 선택 */
+const centralAverageRank = document.getElementById("centralAverageRank");
+const centralHomerunRank = document.getElementById("centralHomerunRank");
+const centralRbiRank = document.getElementById("centralRbiRank");
+const centralHitsRank = document.getElementById("centralHitsRank");
+const centralStealsRank = document.getElementById("centralStealsRank");
+
+centralAverage.addEventListener("click", function () {
+    centralBatterImage.src = "/storage/images/Baystars/Baystars51.jpg";
+
+    centralAverageRank.style.display = "block";
+    centralHomerunRank.style.display = "none";
+    centralRbiRank.style.display = "none";
+    centralHitsRank.style.display = "none";
+    centralStealsRank.style.display = "none";
+});
+
+centralHomerun.addEventListener("click", function () {
+    centralBatterImage.src = "/storage/images/Giants/Giants25.jpg";
+
+    centralAverageRank.style.display = "none";
+    centralHomerunRank.style.display = "block";
+    centralRbiRank.style.display = "none";
+    centralHitsRank.style.display = "none";
+    centralStealsRank.style.display = "none";
+});
+
+centralRbi.addEventListener("click", function () {
+    centralBatterImage.src = "/storage/images/Baystars/Baystars2.jpg";
+
+    centralAverageRank.style.display = "none";
+    centralHomerunRank.style.display = "none";
+    centralRbiRank.style.display = "block";
+    centralHitsRank.style.display = "none";
+    centralStealsRank.style.display = "none";
+});
+
+centralHits.addEventListener("click", function () {
+    centralBatterImage.src = "/storage/images/Baystars/Baystars2.jpg";
+
+    centralAverageRank.style.display = "none";
+    centralHomerunRank.style.display = "none";
+    centralRbiRank.style.display = "none";
+    centralHitsRank.style.display = "block";
+    centralStealsRank.style.display = "none";
+});
+
+centralSteals.addEventListener("click", function () {
+    centralBatterImage.src = "/storage/images/Tigers/Tigers5.jpg";
+
+    centralAverageRank.style.display = "none";
+    centralHomerunRank.style.display = "none";
+    centralRbiRank.style.display = "none";
+    centralHitsRank.style.display = "none";
+    centralStealsRank.style.display = "block";
+});
+
+/* ---------------------------------------------------------------------- */
+
+/* 퍼시픽 타자 li 태그 선택 */
+const pacificAverage = document.querySelector("#pacificBatter .average");
+const pacificHomerun = document.querySelector("#pacificBatter .homerun");
+const pacificRbi = document.querySelector("#pacificBatter .rbi");
+const pacificHits = document.querySelector("#pacificBatter .hits");
+const pacificSteals = document.querySelector("#pacificBatter .steals");
+
+/* 퍼시픽 타자 이미지 선택 */
+const pacificBatterImage = document.getElementById("pacificBatterWinner");
+
+/* 퍼시픽 타자 테이블 선택 */
+const pacificAverageRank = document.getElementById("pacificAverageRank");
+const pacificHomerunRank = document.getElementById("pacificHomerunRank");
+const pacificRbiRank = document.getElementById("pacificRbiRank");
+const pacificHitsRank = document.getElementById("pacificHitsRank");
+const pacificStealsRank = document.getElementById("pacificStealsRank");
+
+pacificAverage.addEventListener("click", function () {
+    pacificBatterImage.src = "/storage/images/Buffaloes/Buffaloes44.jpg";
+
+    pacificAverageRank.style.display = "block";
+    pacificHomerunRank.style.display = "none";
+    pacificRbiRank.style.display = "none";
+    pacificHitsRank.style.display = "none";
+    pacificStealsRank.style.display = "none";
+});
+
+pacificHomerun.addEventListener("click", function () {
+    pacificBatterImage.src = "/storage/images/Hawks/Hawks3.jpg";
+
+    pacificAverageRank.style.display = "none";
+    pacificHomerunRank.style.display = "block";
+    pacificRbiRank.style.display = "none";
+    pacificHitsRank.style.display = "none";
+    pacificStealsRank.style.display = "none";
+});
+
+pacificRbi.addEventListener("click", function () {
+    pacificBatterImage.src = "/storage/images/Hawks/Hawks3.jpg";
+
+    pacificAverageRank.style.display = "none";
+    pacificHomerunRank.style.display = "none";
+    pacificRbiRank.style.display = "block";
+    pacificHitsRank.style.display = "none";
+    pacificStealsRank.style.display = "none";
+});
+
+pacificHits.addEventListener("click", function () {
+    pacificBatterImage.src = "/storage/images/Hawks/Hawks9.jpg";
+
+    pacificAverageRank.style.display = "none";
+    pacificHomerunRank.style.display = "none";
+    pacificRbiRank.style.display = "none";
+    pacificHitsRank.style.display = "block";
+    pacificStealsRank.style.display = "none";
+});
+
+pacificSteals.addEventListener("click", function () {
+    pacificBatterImage.src = "/storage/images/Hawks/Hawks23.jpg";
+
+    pacificAverageRank.style.display = "none";
+    pacificHomerunRank.style.display = "none";
+    pacificRbiRank.style.display = "none";
+    pacificHitsRank.style.display = "none";
+    pacificStealsRank.style.display = "block";
+});
