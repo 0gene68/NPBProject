@@ -7,5 +7,12 @@
     a:hover {
         opacity: 0.5;
     }
+
+    #logoImage {
+        width: 200px;
+        height: 68px;
+    }
 </style>
-<a href="/">홈</a>
+<a href="/">
+    <img src="storage/images/logos/projectLogo-black.png" alt="" id="logoImage">
+</a> 
