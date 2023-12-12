@@ -187,7 +187,22 @@ Route::post('/post', function(Request $request) {
     return redirect('/board')->with('success', '포스트가 등록되었습니다.');;
 });
 
-Route::delete('/posts/{id}', function(Request $request, $id) {
+Route::put('/posts/{id}', function(Request $request, $id) {
+    $post = Post::find($id);
+
+    $title = $request->input('title');
+    $team = $request->input('team');
+    $content = $request->input('content');
+
+    $post->title = $title;
+    $post->team = $team;
+    $post->content = $content;
+    $post->save();
+    
+    return redirect('/board')->with('success', '포스트가 수정되었습니다.');
+});
+
+Route::delete('/posts/{id}', function($id) {
     $post = Post::find($id);
     $post->delete();
 
