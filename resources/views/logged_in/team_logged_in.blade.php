@@ -14,7 +14,7 @@
     <div id="header">
         <div id="mainLogo">
             <a href="/">
-                <img src="storage/images/logos/NPB_logo.svg.png" alt="" id="logoImage">
+                <img src="storage/images/logos/projectLogo.png" alt="" id="logoImage">
             </a>    
         </div>
         <div id="wrap">
@@ -33,16 +33,16 @@
                 </a>
             </ul>
             <ul>
-                <a href="/dashboard">
-                    <li id="userName">{{$user->name}}</li>
-                </a>
-                <li id="logout-btn">로그아웃</li>
-                <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                    @csrf
-                </form>
+              <a href="/dashboard">
+                <li id="userName">{{$user->name}}</li>
+              </a>
+              <li id="logout-btn">로그아웃</li>
+              <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                @csrf
+              </form>
             </ul>
-        </div>
-    </div>
+          </div>
+      </div>
     <div id="teamInfoContainer">
         <div>
             <img src={{$selectedTeam->logo}} alt="으악!" id="teamLogo" data-team-id="{{$team_id}}">

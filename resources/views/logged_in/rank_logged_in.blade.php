@@ -13,7 +13,7 @@
     <div id="header">
       <div id="mainLogo">
           <a href="/">
-              <img src="storage/images/logos/NPB_logo.svg.png" alt="" id="logoImage">
+              <img src="storage/images/logos/projectLogo.png" alt="" id="logoImage">
           </a>    
       </div>
       <div id="wrap">
@@ -32,16 +32,16 @@
               </a>
           </ul>
           <ul>
-              <a href="/dashboard">
-                  <li id="userName">{{$user->name}}</li>
-              </a>
-              <li id="logout-btn">로그아웃</li>
-              <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                  @csrf
-              </form>
+            <a href="/dashboard">
+              <li id="userName">{{$user->name}}</li>
+            </a>
+            <li id="logout-btn">로그아웃</li>
+            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+              @csrf
+            </form>
           </ul>
-      </div>
-  </div>
+        </div>
+    </div>
     {{-- 2023시즌 팀 순위표 --}}
     <div class="table-container">
       <div id="rankTableCentral" data-variable="{{$centralTeams}}"></div>
@@ -151,7 +151,7 @@
       <div id="rankTableCentral">
         <div class="rankTable" id="pacific">
           <img src="storage/images/logos/Pacific.png" alt="" id="pacificLogo">
-          <span>2023시즌 퍼시픽 리그 순위</span>
+          <span>2023시즌 퍼시픽 리그 투수 순위</span>
       </div>
         <ul class="menus" id="pacificPitcher">
           <li class="era">방어율</li>

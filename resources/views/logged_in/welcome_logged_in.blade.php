@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>NPB</title>
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/imageSlider.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/rankTable.css') }}">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NPB</title>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/imageSlider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/rankTable.css') }}">
+</head>
+<body>
     {{-- 로그인 헤더 --}}
     <div id="header">
         <div id="mainLogo">
             <a href="/">
-                <img src="storage/images/logos/NPB_logo.svg.png" alt="" id="logoImage">
+                <img src="storage/images/logos/projectLogo.png" alt="" id="logoImage">
             </a>    
         </div>
         <div id="wrap">
@@ -32,16 +32,16 @@
                 </a>
             </ul>
             <ul>
-                <a href="/dashboard">
-                    <li id="userName">{{$user->name}}</li>
-                </a>
-                <li id="logout-btn">로그아웃</li>
-                <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                    @csrf
-                </form>
+              <a href="/dashboard">
+                <li id="userName">{{$user->name}}</li>
+              </a>
+              <li id="logout-btn">로그아웃</li>
+              <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                @csrf
+              </form>
             </ul>
-        </div>
-    </div>
+          </div>
+      </div>
     {{-- 이미지 슬라이더 --}}
     <div class="slider-container">
         <div class="slider">

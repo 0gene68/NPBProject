@@ -12,7 +12,7 @@
     <div id="header">
       <div id="mainLogo">
           <a href="/">
-              <img src="storage/images/logos/NPB_logo.svg.png" alt="" id="logoImage">
+              <img src="storage/images/logos/projectLogo.png" alt="" id="logoImage">
           </a>    
       </div>
       <div id="wrap">
@@ -31,16 +31,16 @@
               </a>
           </ul>
           <ul>
-              <a href="/dashboard">
-                  <li id="userName">{{$user->name}}</li>
-              </a>
-              <li id="logout-btn">로그아웃</li>
-              <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                  @csrf
-              </form>
+            <a href="/dashboard">
+              <li id="userName">{{$user->name}}</li>
+            </a>
+            <li id="logout-btn">로그아웃</li>
+            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+              @csrf
+            </form>
           </ul>
-      </div>
-  </div>
+        </div>
+    </div>
   <div id="board_container">
     <h1>게시판</h1>
     <span>좋아하는 팀을 응원해보세요!</span>
