@@ -478,5 +478,6 @@
         </div>
 
   <script src="{{ asset('js/rankTable.js') }}"></script>
+  <script src="{{ asset('js/logout.js') }}"></script>
 </body>
 </html>

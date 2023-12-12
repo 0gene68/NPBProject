@@ -98,5 +98,7 @@
             <a href="https://npb.jp/">▶ NPB 사이트</a>
         </div>
     </div>
+
+    <script src="{{ asset('js/logout.js') }}"></script>
 </body>
 </html>
