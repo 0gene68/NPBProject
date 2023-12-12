@@ -22,13 +22,14 @@ body {
 }
 
 #mainLogo {
-    width: 250px;
+    size: 20px;
     text-align: center;
+    margin-left: 50px;
 }
 
 #logoImage {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 68px;
 }
 
 #wrap {
@@ -51,7 +52,7 @@ ul:last-child {
 }
 
 ul:last-child a {
-    width: 130px;
+    width: 200px;
     font-size: small;
 }
 
@@ -88,8 +89,14 @@ li:hover {
     opacity: 0.5;
 }
 
+#auth {
+    width: 400px;
+    padding: 0;
+}
+
 #userName {
-    width: 100px;
+    width: 200px;
+    margin-right: 150px;
 }
 
 #footer {
