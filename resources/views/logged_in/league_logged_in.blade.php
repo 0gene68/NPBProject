@@ -93,7 +93,33 @@
             @endforeach
         </div>
     </div>
+    <h1>시즌 진행</h1>
+    <div id="season-container">
+        <div id="pennantRace-container">
+            <h2>페넌트레이스</h2>
+            <br>
+            <div class="explaination">
+                　같은 리그 팀과는 공식전(한 팀당 25경기), 다른 리그 팀과는 교류전(한 팀당 3경기)을 진행하여 총 143경기를 진행한다. 모든 경기를 진행한 이후 승률이 가장 높은 3팀이 클라이맥스 시리즈에 진출한다.
+            </div>
+        </div>
+        <div id="climaxSeries-container">
+            <h2>클라이맥스 시리즈</h2>    
+            <br>
+            <div class="explaination">
+                　각 리그 3위 팀과 2위 팀이 3전 2선승제로 퍼스트 스테이지를 실시한다. 2위 팀은 홈 어드밴티지를 받는다. 퍼스트 스테이지 승리 팀은 리그 1위 팀과 6전 4선승제로 파이널 스테이지를 치른다. 리그 1위 팀은 홈 어드밴티지와 1승 어드밴티지를 받는다. 
+            </div>
+        </div>
+        <div id="japanSeries-container">
+            <h2>일본시리즈</h2>
+            <br>
+            <div class="explaination">
+                　두 리그의 클라이맥스 시리즈 우승 팀이 맞붙는다. 7전 4선승제로 실시되고, 홀수 해에는 퍼시픽 리그 우승팀이, 짝수 해에는 센트럴 리그 우승팀이 홈 어드밴티지를 가져가게 되고, 홈 어드밴티지가 있는 팀의 홈 구장에서 4경기를 치른다. 
+            </div>
+        </div>
+    </div>
+    <br>
   </div>
+
 
     {{-- 푸터 --}}
     <div id="footer">
@@ -126,5 +152,6 @@
             </div>
         </div>
 
+        <script src="{{ asset('js/logout.js') }}"></script>
 </body>
 </html>
