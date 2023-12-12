@@ -44,6 +44,16 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/league', function() {
+    if(Auth::check()) {
+        $user = Auth::user();
+
+        return view('logged_in.league_logged_in', ['user'=>$user]);
+    } else {
+        return view('non_logged_in.league_non_logged_in');
+    }
+});
+
 Route::get('/rank', function() {
     $teams = Team::all();
 
