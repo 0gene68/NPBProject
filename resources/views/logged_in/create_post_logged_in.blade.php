@@ -47,9 +47,9 @@
         <form action="/post" method="post">
             @csrf
             <label for="title">제목</label>
-            <input type="text" name="title" id="title" autocomplete="off"><br><br>
+            <input type="text" name="title" id="title" autocomplete="off" required><br><br>
             <label for="team">응원팀</label>
-            <select name="team" id="select">
+            <select name="team" id="select" required>
                 <option selected>팀을 선택하세요</option>
                 <option value="한신">한신 타이거스</option>
                 <option value="오릭스">오릭스 버팔로즈</option>
@@ -64,7 +64,7 @@
                 <option value="주니치">주니치 드래곤즈</option>
                 <option value="닛폰햄">홋카이도 닛폰햄 파이터즈</option>
               </select><br><br>
-              <textarea name="content" id="content" autocomplete="off" cols="30" rows="10"></textarea><br><br>
+              <textarea name="content" id="content" autocomplete="off" cols="30" rows="10" required></textarea><br><br>
               <input type="submit" value="등록" id="submit_button">
         </form>
     </div>
