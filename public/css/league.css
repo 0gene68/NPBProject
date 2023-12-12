@@ -1,0 +1,106 @@
+#main-content {
+    margin: 50px 100px 0 100px;
+}
+
+#main-content > h1 {
+    width: 100%;
+    margin-left: 50px;
+}
+
+#info-container {
+    display: flex;
+    margin-left: 50px;
+}
+
+#info-container img {
+    width: 300px;
+    height: 300px;
+}
+
+#content {
+    padding: 50px 0 50px 0;
+}
+
+#content div {
+    font-size: 1.5em;
+}
+
+#team-title-container {
+    display: flex;
+    margin: 0 50px 0 50px;
+}
+
+#central {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    background-color: rgb(51, 136, 69);
+}
+
+#centralLogo {
+    width: 70px;
+    height: 70px;
+    margin: 20px 0 0 150px;
+}
+
+#central h1,
+#pacific h1 {
+    line-height: 2;
+    margin-left: 50px;
+}
+
+#pacific {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    background-color: skyblue;
+}
+
+#pacificLogo {
+    width: 120px;
+    height: 60px;
+    margin: 20px 0 0 100px;
+}
+
+#team-container {
+    display: flex;
+}
+
+#central-team-container,
+#pacific-team-container {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+}
+
+#central-team-container {
+    margin-left: 50px;
+}
+
+#pacific-team-container {
+    margin-right: 50px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+}
+
+.teamLogo {
+    width: 100px;
+    height: 100px;
+    margin: 5px 50px 0 50px;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.teamLogo:hover {
+    opacity: 0.5;
+}
+
+.box p {
+    width: 200px;
+    text-align: center;
+    font-size: small;
+}
