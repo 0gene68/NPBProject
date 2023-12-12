@@ -44,6 +44,78 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/rank', function() {
+    $teams = Team::all();
+
+    $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
+    $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
+
+    $centralEraWinners = DB::select('SELECT * FROM eras WHERE league = "central" ORDER BY ranks');
+    $pacificEraWinners = DB::select('SELECT * FROM eras WHERE league = "pacific" ORDER BY ranks');
+
+    $centralWinsWinners = DB::select('SELECT * FROM wins WHERE league = "central" ORDER BY ranks');
+    $pacificWinsWinners = DB::select('SELECT * FROM wins WHERE league = "pacific" ORDER BY ranks');
+
+    $centralKsWinners = DB::select('SELECT * FROM ks WHERE league = "central" ORDER BY ranks');
+    $pacificKsWinners = DB::select('SELECT * FROM ks WHERE league = "pacific" ORDER BY ranks');
+
+    $centralSavesWinners = DB::select('SELECT * FROM saves WHERE league = "central" ORDER BY ranks');
+    $pacificSavesWinners = DB::select('SELECT * FROM saves WHERE league = "pacific" ORDER BY ranks');
+
+    $centralHoldsWinners = DB::select('SELECT * FROM holds WHERE league = "central" ORDER BY ranks');
+    $pacificHoldsWinners = DB::select('SELECT * FROM holds WHERE league = "pacific" ORDER BY ranks');
+
+    $centralAverageWinners = DB::select('SELECT * FROM average WHERE league = "central" ORDER BY ranks');
+    $pacificAverageWinners = DB::select('SELECT * FROM average WHERE league = "pacific" ORDER BY ranks');
+
+    $centralHomerunsWinners = DB::select('SELECT * FROM homeruns WHERE league = "central" ORDER BY ranks');
+    $pacificHomerunsWinners = DB::select('SELECT * FROM homeruns WHERE league = "pacific" ORDER BY ranks');
+
+    $centralRbiWinners = DB::select('SELECT * FROM rbi WHERE league = "central" ORDER BY ranks');
+    $pacificRbiWinners = DB::select('SELECT * FROM rbi WHERE league = "pacific" ORDER BY ranks');
+
+    $centralHitsWinners = DB::select('SELECT * FROM hits WHERE league = "central" ORDER BY ranks');
+    $pacificHitsWinners = DB::select('SELECT * FROM hits WHERE league = "pacific" ORDER BY ranks');
+
+    $centralStealsWinners = DB::select('SELECT * FROM steals WHERE league = "central" ORDER BY ranks');
+    $pacificStealsWinners = DB::select('SELECT * FROM steals WHERE league = "pacific" ORDER BY ranks');
+
+
+    if(Auth::check()) {
+        $user = Auth::user();
+        return view('logged_in.rank_logged_in', 
+            [
+                'teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user,
+                'centralEraWinners'=>$centralEraWinners, 'pacificEraWinners'=>$pacificEraWinners,
+                'centralWinsWinners'=>$centralWinsWinners, 'pacificWinsWinners'=>$pacificWinsWinners,
+                'centralKsWinners'=>$centralKsWinners, 'pacificKsWinners'=>$pacificKsWinners,
+                'centralSavesWinners'=>$centralSavesWinners, 'pacificSavesWinners'=>$pacificSavesWinners,
+                'centralHoldsWinners'=>$centralHoldsWinners, 'pacificHoldsWinners'=>$pacificHoldsWinners,
+                'centralAverageWinners'=>$centralAverageWinners, 'pacificAverageWinners'=>$pacificAverageWinners,
+                'centralHomerunsWinners'=>$centralHomerunsWinners, 'pacificHomerunsWinners'=>$pacificHomerunsWinners,
+                'centralRbiWinners'=>$centralRbiWinners, 'pacificRbiWinners'=>$pacificRbiWinners,
+                'centralHitsWinners'=>$centralHitsWinners, 'pacificHitsWinners'=>$pacificHitsWinners,
+                'centralStealsWinners'=>$centralStealsWinners, 'pacificStealsWinners'=>$pacificStealsWinners
+            ]);   
+    } else {
+        return view('non_logged_in.rank_non_logged_in',             
+        [
+            'teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams,
+            'centralEraWinners'=>$centralEraWinners, 'pacificEraWinners'=>$pacificEraWinners,
+            'centralWinsWinners'=>$centralWinsWinners, 'pacificWinsWinners'=>$pacificWinsWinners,
+            'centralKsWinners'=>$centralKsWinners, 'pacificKsWinners'=>$pacificKsWinners,
+            'centralSavesWinners'=>$centralSavesWinners, 'pacificSavesWinners'=>$pacificSavesWinners,
+            'centralHoldsWinners'=>$centralHoldsWinners, 'pacificHoldsWinners'=>$pacificHoldsWinners,
+            'centralAverageWinners'=>$centralAverageWinners, 'pacificAverageWinners'=>$pacificAverageWinners,
+            'centralHomerunsWinners'=>$centralHomerunsWinners, 'pacificHomerunsWinners'=>$pacificHomerunsWinners,
+            'centralRbiWinners'=>$centralRbiWinners, 'pacificRbiWinners'=>$pacificRbiWinners,
+            'centralHitsWinners'=>$centralHitsWinners, 'pacificHitsWinners'=>$pacificHitsWinners,
+            'centralStealsWinners'=>$centralStealsWinners, 'pacificStealsWinners'=>$pacificStealsWinners
+        ]);   
+    }
+});
+
+
 Route::get('/teams', function() {
     $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
     $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
@@ -56,18 +128,6 @@ Route::get('/teams', function() {
     }
 });
 
-Route::get('/rank', function() {
-    $teams = Team::all();
-    $centralTeams = Team::where('league', 'central')->orderBy('rank_2023')->get();
-    $pacificTeams = Team::where('league', 'pacific')->orderBy('rank_2023')->get();
-
-    if(Auth::check()) {
-        $user = Auth::user();
-        return view('logged_in.rank_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams, 'user'=>$user]);   
-    } else {
-        return view('non_logged_in.rank_non_logged_in', ['teams'=>$teams, 'centralTeams'=>$centralTeams, 'pacificTeams'=>$pacificTeams]);   
-    }
-});
 
 Route::get('/board', function() {
     $isLoggedIn = null;
