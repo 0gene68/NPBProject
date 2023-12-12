@@ -1,3 +1,4 @@
+<title>JBL</title>
 <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 <x-app-layout>
     <x-slot name="header">

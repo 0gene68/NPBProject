@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NPB</title>
+    <title>JBL</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/imageSlider.css') }}">
     <link rel="stylesheet" href="{{ asset('css/rankTable.css') }}">

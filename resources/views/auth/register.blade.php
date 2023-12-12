@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ asset('css/breeze.css') }}">
+<title>JBL</title>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
