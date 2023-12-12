@@ -89,7 +89,7 @@
     right: 0;
 }
 
-#modal-background {
+#modal-info-background {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -101,7 +101,7 @@
     align-items: center;
 }
 
-#modal {
+.modal {
     background: white;
     width: 800px;
     height: 550px;
@@ -148,4 +148,38 @@
     position: absolute;
     width: 60px;
     height: 30px;
+}
+
+#modal-modify-background {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modify-post-title {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#modify-title {
+    width: 650px;
+}
+
+#modify-select {
+    border: none;
+}
+
+#modify-content {
+    resize: none;
+}
+
+#modify-button {
+    position: absolute;
+    right: 75px;
 }
