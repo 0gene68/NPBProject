@@ -82,7 +82,7 @@
         </a> 
     </div>
   </div>
-  <div id="modal-background" onclick="closeModal()">
+  <div id="modal-info-background" onclick="closeModal()">
     <div id="modal" class="modal"> 
         <div class="modal-content">
           <div class="post-info">
