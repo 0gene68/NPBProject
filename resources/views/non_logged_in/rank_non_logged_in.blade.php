@@ -151,7 +151,7 @@
       <div id="rankTableCentral">
         <div class="rankTable" id="pacific">
           <img src="storage/images/logos/Pacific.png" alt="" id="pacificLogo">
-          <span>2023시즌 퍼시픽 리그 순위</span>
+          <span>2023시즌 퍼시픽 리그 투수 순위</span>
       </div>
         <ul class="menus" id="pacificPitcher">
           <li class="era">방어율</li>
@@ -335,7 +335,7 @@
               <th class="rank">순위</th>
               <th class="name">이름</th>
               <th class="team">소속팀</th>
-              <th class="test">홀드</th>
+              <th class="test">도루</th>
             </tr>
             @foreach ($centralStealsWinners as $centralStealsWinner)
             <tr>
