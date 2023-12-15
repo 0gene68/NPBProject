@@ -153,3 +153,13 @@ li:hover {
 #footer a:hover {
     opacity: 0.9;
 }
+
+@media screen and (min-width: 1520px) {
+    #centralTeams {
+        margin-left: 300px;
+    }
+
+    #pacificTeams {
+        margin-right: 300px;
+    }
+}

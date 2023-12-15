@@ -3,12 +3,25 @@
     margin: 100px 375px 0 375px;
 }
 
+@media screen and (min-width: 1520px) {
+    #board_container {
+        width: 1200px;
+        margin: 100px 550px 0 550px;
+    }
+
+    #create_post_link {
+        width: 60px;
+        height: 30px;
+        position: absolute;
+        right: 400px;
+    }
+}
+
 #board_container span {
     font-size: small;
 }
 
 #post-container {
-    width: 800px;
     margin-top: 50px;
     position: relative;
 }

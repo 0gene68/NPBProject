@@ -43,6 +43,12 @@
     flex-wrap: wrap;
 }
 
+@media screen and (min-width: 1520px) {
+    .toggle-content.active {
+        width: 1200px;
+    }
+}
+
 .box {
     text-align: center;
     width: 200px;

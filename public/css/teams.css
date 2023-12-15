@@ -70,6 +70,17 @@
     left: 150px;
 }
 
+@media screen and (min-width: 1520px) {
+    #central-container,
+    #pacific-container {
+        width: 950px;
+    }
+
+    .wrapper {
+        width: 850px;
+    }
+}
+
 .wrapper {
     display: flex;
 }
