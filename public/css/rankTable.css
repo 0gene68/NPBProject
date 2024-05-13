@@ -11,17 +11,6 @@
     border-radius: 5px;
 }
 
-@media screen and (min-width: 1520px) {
-    #rankTableCentral,
-    #rankTablePacific {
-        width: 650px;
-        display: inline-block;
-        margin: 100px 130px 0 130px;
-        font-size: larger;
-        border-radius: 5px;
-    }
-}
-
 tr,
 td {
     text-align: center;
